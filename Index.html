@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahammed Abdul Aoual | Software Engineer</title>
+    <!-- Clean Premium Typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --border: #1f2937;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Profile Header */
+        header {
+            margin-bottom: 4rem;
+        }
+        
+        .status-bar {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .links a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Focus & Context Row */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .metric-card {
+            border-left: 2px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .metric-val {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .metric-lbl {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Section Layout */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        .sec-num {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-family: monospace;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        /* Typography & Paragraphs */
+        .bio-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text strong {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Timeline Items (Education & Research) */
+        .timeline-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .timeline-time {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: monospace;
+        }
+
+        .timeline-sub {
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Skills Layout */
+        .skills-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-group h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        /* Projects Vertical Stack */
+        .project-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .project-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        /* Footer Details */
+        footer {
+            text-align: left;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Top Status Bar and Intro Header -->
+        <header>
+            <div class="status-bar">Dhaka, Bangladesh — Available for engineering roles</div>
+            <h1>Ahammed Abdul Aoual</h1>
+            <div class="lead">Software Engineer specializing in .NET backend systems and web applications.</div>
+            <div class="links">
+                <a href="mailto:ahammed.aoual@gmail.com">Get in touch →</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- Focus Context Metrics Block -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-val">.NET Core</div>
+                <div class="metric-lbl">Primary Backend Framework</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val">4x Finalist</div>
+                <div class="metric-lbl">Inter-AUST Programming Contest</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val">AWS EC2</div>
+                <div class="metric-lbl">Cloud Deployment & Systems</div>
+            </div>
+        </div>
+
+        <!-- 01 About -->
+        <section id="about">
+            <span class="sec-num">01 About</span>
+            <h2>Profile</h2>
+            <p class="bio-text">
+                I am a Computer Science and Engineering graduate with hands-on experience developing <strong>.NET applications</strong>, structuring complex application logic, and configuring database-driven architectures. I focus heavily on writing maintainable code and solving relational database scaling problems.
+            </p>
+            <p class="bio-text">
+                Beyond core production engineering, I enjoy algorithmic tracking and competitive problem-solving. I served as an Executive at the <strong>AUST Programming and Informatics Club</strong>, coordinating programming initiatives and reaching competitive collegiate finals multiple times.
+            </p>
+        </section>
+
+        <!-- 02 Selected Technical Projects -->
+        <section id="projects">
+            <span class="sec-num">02 Projects</span>
+            <h2>Selected Technical Work</h2>
+            
+            <div class="project-item">
+                <div class="project-title-row">
+                    <div class="project-name">UrbanNest · Real Estate Management Platform</div>
+                    <div class="project-tech">ASP.NET Core · MySQL</div>
+                </div>
+                <ul>
+                    <li>Developed an end-to-end web system supporting interactive portals for buyers, agents, and administrators.</li>
+                    <li>Designed role-specific system rules and verified performance behaviors across relational interactions.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title-row">
+                    <div class="project-name">Employee Management Database System</div>
+                    <div class="project-tech">ASP.NET Core · MSSQL Server</div>
+                </div>
+                <ul>
+                    <li>Architected an enterprise relational database utilizing optimized foreign/primary keys and normalization rules.</li>
+                    <li>Wrote high-performance SQL queries containing subqueries, complex JOIN operations, and aggregation filters.</li>
+                </ul>
